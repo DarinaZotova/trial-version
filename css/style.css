@@ -1,0 +1,318 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'League Spartan', sans-serif;
+  transition: background-color 1s ease, color 1s ease; 
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-left: 150px;   /* в лево сдвинула */
+}
+
+.calculator {
+  background-color: #F2F2F2;
+  padding: 8px;
+  width: 390px;
+  border-radius: 48px;
+  overflow: hidden; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.calculator .screen {
+  background-color: #D9D9D9;
+  height: 180px;
+  width: 100%;
+  border-radius: 48px;
+}
+
+.calculator .buttons {
+  background-color: #F2F2F2;
+  width: fit-content;
+  border-radius: 48px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 столбцов */
+  grid-template-columns: repeat(5, 1fr); /* 5 столбцов */
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  grid-template-areas: "clear memory_recall memory_clean memory_plus memory_minus" "one two three plus sign" "four five six minus square" "seven eight nine multiplication power" "zero decimal rest division equal";
+}
+
+.calculator .buttons .btn {
+  border-radius: 50%;
+  padding: 20px;
+  width: fit-content;
+  height: fit-content;
+  justify-content: center;
+  display: flex;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 2px 15px rgba(0, 0, 0, 0.1); 
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.calculator .buttons .btn:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 4px 25px rgba(0, 0, 0, 0.15); 
+  transform: translateY(-1px); 
+}
+
+.calculator .buttons .btn:active {
+  transform: translateY(2px); 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 1px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.calculator .buttons .number {
+  background-color: #D9D9D9;
+  color: #A66D7C;
+  width: 10px;
+  height: 10px;
+}
+
+.calculator .buttons .operations {
+  background-color: #F2C9D4;
+  width: 10px;
+  height: 10px;
+}
+
+.calculator .buttons .plus {
+  grid-area: plus;
+}
+
+.calculator .buttons .minus {
+  grid-area: minus;
+}
+
+.calculator .buttons .multiplication {
+  grid-area: multiplication;
+}
+
+.calculator .buttons .division {
+  grid-area: division;
+}
+
+.calculator .buttons .functional {
+  background-color: #D6DCD1;
+  position: relative;
+  border-radius: 30px;
+  height: 10px;
+  width: 16px;
+  right: 2px; 
+}
+
+.calculator .buttons .memory_recall {
+  background-color: #F0F4E4;
+  grid-area: memory_recall;
+  position: relative;
+  right: 2px; 
+  border-radius: 30px;
+  height: 10px;
+  
+}
+
+.calculator .buttons .memory_clean {
+  background-color: #C1AAAA;
+  grid-area: memory_clean;
+  position: relative;
+  right: 2px; 
+  border-radius: 30px;
+  height: 10px;
+}
+
+.calculator .buttons .memory_plus {
+  background-color: #D0C3BD;
+  grid-area: memory_plus;
+  position: relative;
+  right: 2px; 
+  border-radius: 30px;
+  height: 10px;
+}
+
+.calculator .buttons .memory_minus {
+  background-color: #D0C3BD;
+  grid-area: memory_minus;
+  position: relative;
+  right: 2px; 
+  border-radius: 30px;
+  height: 10px;
+
+}
+
+.calculator .buttons .sign {
+  background-color: #BF9B9B;
+  grid-area: sign;
+  position: relative;
+  right: 2px; 
+  border-radius: 30px;
+  height: 10px;
+  width: 18px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;    
+
+}
+
+.calculator .buttons .square {
+  background-color: #A66D7C;
+  grid-area: square;
+  position: relative;
+  right: 2px; 
+  border-radius: 30px;
+  height: 10px;
+  width: 18px;
+  display: flex; 
+  justify-content: center;
+  align-items: center;    
+}
+
+.calculator .buttons .power {
+  background-color: #734058;
+  grid-area: power;
+  position: relative;
+  right: 2px; 
+  border-radius: 30px;
+  height:10px;
+  width: 18px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;     
+}
+
+.calculator .buttons .equal {
+  background-color: #594347;
+  grid-area: equal;
+  position: relative;
+  right: 2px; 
+  border-radius: 30px;
+  height: 10px;
+  width: 40px;
+  left: -15px;
+  display: flex; 
+  justify-content: center;
+  align-items: center;    
+}
+
+/* ТЕМНАЯ ТЕМА */
+body.dark-mode {
+  background-color: #3B3B3B;
+  color: #1E1E1E;
+}
+
+body.dark-mode .calculator {
+  background-color: #262626;
+}
+
+body.dark-mode .calculator .screen {
+  background-color: #1E1E1E;
+}
+
+body.dark-mode .calculator .buttons {
+  background-color: #262626;
+  color: #F2C9D4; 
+}
+
+body.dark-mode .calculator .buttons .btn {
+  background-color: #1E1E1E;
+}
+
+body.dark-mode .calculator .buttons .operations {
+  background-color: #F2C9D4;
+  color: black; 
+}
+
+body.dark-mode .calculator .buttons .functional {
+  background-color: #D6DCD1;
+  color: black; 
+}
+
+body.dark-mode .calculator .buttons .memory_recall {
+  background-color: #F0F4E4;
+  color: black; 
+}
+
+body.dark-mode .calculator .buttons .memory_clean {
+  background-color: #C1AAAA;
+  color: black; 
+}
+
+body.dark-mode .calculator .buttons .memory_plus {
+  background-color: #D0C3BD;
+  color: black; 
+}
+
+body.dark-mode .calculator .buttons .memory_minus {
+  background-color: #E0D1C7;
+  color: black; 
+}
+
+body.dark-mode .calculator .buttons .sign {
+  background-color: #BF9B9B;
+  color: black; 
+}
+
+body.dark-mode .calculator .buttons .square {
+  background-color: #A66D7C;
+  color: black; 
+}
+
+body.dark-mode .calculator .buttons .power {
+  background-color: #734058;
+  color: black; 
+}
+
+body.dark-mode .calculator .buttons .equal {
+  background-color: #594347;
+  color: black; 
+}
+.theme-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1E1E1E; 
+  border-radius: 48px;
+  padding: 8px;
+  margin-left: 50px; 
+}
+
+.switch {
+  background-color: #1E1E1E;
+  border-radius: 24px; 
+  width: 80px;   
+  height: 32px;      
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  transition: box-shadow 0.3s ease, transform 0.3s ease; 
+}
+
+
+.switch .theme-icon {
+  font-size: 24px;
+  color: #3B3B3B;
+  transition: color 0.3s ease; 
+}
+
+/* Светлая тема — когда НЕТ dark-mode */
+body:not(.dark-mode) .theme-container {
+  background-color: #D9D9D9;
+}
+
+body:not(.dark-mode) .switch {
+  background-color: #D9D9D9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+body:not(.dark-mode) .theme-icon {
+  font-size: 30px;
+  color: white;
+}
+
+body:not(.dark-mode) .calculator-title {
+  color: #D9D9D9; 
+}
