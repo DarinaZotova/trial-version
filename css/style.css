@@ -17,7 +17,7 @@ body {
 .calculator {
   background-color: #F2F2F2;
   padding: 8px;
-  width: 390px;
+  width: 395px;
   border-radius: 48px;
   overflow: hidden; 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
@@ -37,7 +37,6 @@ body {
   border-radius: 48px;
   padding: 16px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 столбцов */
   grid-template-columns: repeat(5, 1fr); /* 5 столбцов */
   grid-column-gap: 1em;
   grid-row-gap: 1em;
